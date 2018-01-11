@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-large btn-block btn-success" (click)="network_status = 1" >连接</button>
+    </div>
+    <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-large btn-block btn-danger" (click)="network_status = 0" >断开</button>
+    </div>
+</div>
+<div class="network-show-content" [ngClass]="{connected: network_status == 1, disconnected: network_status == 0}" >
+    {{network_status == 1 ? 'connected' : 'disconnected'}}
+</div>

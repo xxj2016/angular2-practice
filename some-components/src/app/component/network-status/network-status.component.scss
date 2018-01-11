@@ -1,0 +1,21 @@
+.network-show-content {
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    bottom: 20px;
+    right: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+}
+.connected {
+    background-color: #3FBA62;
+    box-shadow:#3FBA62 0 0 100px ;
+    
+}
+.disconnected {
+    background-color: #D9534F;
+    box-shadow:#D9534F 0 0 100px ;
+    
+}
