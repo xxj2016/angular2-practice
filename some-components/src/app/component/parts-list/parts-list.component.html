@@ -1,0 +1,48 @@
+<div class="panel panel-default" style="border: 0;">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Parts List</div>
+    <!-- Table -->
+    <div class="table-responsed">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>零件id</th>
+                    <th>账单id</th>
+                    <th>名字</th>
+                    <th>年份</th>
+                    <th>系列</th>
+                    <th>厂商</th>
+                    <th>型号</th>
+                    <th>描述文本</th>
+                    <th>价格</th>
+                    <th>是否需要安装</th>
+                    <th>是否有库存</th>
+                    <th>是否客户自己安装</th>
+                    <th>到货日期</th>
+                    <th>安装日期</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let part of partsList">
+                    <td [style.backgroundColor]="status_color[part.Status - 1]">{{part.DueBillPartsId}}</td>
+                    <td>{{part.DueBillId}}</td>
+                    <td>{{part.Name}}</td>
+                    <td>{{part.Year}}</td>
+                    <td>{{part.Trim}}</td>
+                    <td>{{part.Make}}</td>
+                    <td>{{part.Model}}</td>
+                    <td>{{part.Description}}</td>
+                    <td>{{part.Cost}}</td>
+                    <td>{{part.RequiredInstall}}</td>
+                    <td>{{part.IsInStock}}</td>
+                    <td>{{part.CustomerInstallation}}</td>
+                    <td>{{part.OrderDeliverdDate}}</td>
+                    <td>{{part.Schedule}}</td>
+                    <td>{{part.Status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
