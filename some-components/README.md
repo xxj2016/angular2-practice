@@ -2,6 +2,7 @@
 ###
 * ng g component component/组件名字 
 ng g component component/network-status
+ng g component component/event-board
 ###
 
 ###
@@ -11,7 +12,7 @@ ng g component pages/product-list
 
 ###
 * ng g class models/类名字
-ng g class models/supplier
+ng g class models/event-board
 ###
 
 ###

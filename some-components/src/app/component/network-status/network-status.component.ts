@@ -10,6 +10,7 @@ export class NetworkStatusComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        this.network_status = 1;
     }
 
 }
