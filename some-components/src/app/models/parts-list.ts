@@ -11,8 +11,8 @@ export class PartsList {
     RequiredInstall: number;  // 0 or 1，表示是否需要安装
     IsInStock: number;  // 0 or 1，表示是否有库存
     CustomerInstallation: number;  // 0 or 1，表示是否客户自己安装
-    OrderDeliverdDate: string;  // 到货日期，格式 : 年-月-日
-    Schedule: string;  // 安装日期，格式 :  年-月-日
+    OrderDeliverdDate: Date;  // 到货日期，格式 : 年-月-日
+    Schedule: Date;  // 安装日期，格式 :  年-月-日
     Status: number;  // 状态，取值[1, 5]，用5中不同颜色标定
 
 }

@@ -35,24 +35,26 @@
                     <td>{{part.Description}}</td>
                     <td>{{part.Cost}}</td>
                     <td>{{part.RequiredInstall == 1 ? '是' : '否'}}</td>
+                    <!-- 当模式为parts -->
                     <td *ngIf="model != 'parts'">{{part.IsInStock == 1 ? '是' : '否'}}</td>
                     <td *ngIf="model == 'parts'">
                         <div class="radio">
                             <label>
-                                <input type="radio" [(ngModel)]="part.IsInStock" name="IsInStock{{i}}" [value]="1" checked="checked">
+                                <input type="radio" name="IsInStock{{i}}" [(ngModel)]="part.IsInStock" [value]="1">
                                 是
                             </label>
                             <label>
-                                <input type="radio" [(ngModel)]="part.IsInStock" name="IsInStock{{i}}" [value]="0">
+                                <input type="radio" name="IsInStock{{i}}" [(ngModel)]="part.IsInStock" [value]="0">
                                 否
                             </label>
                         </div>
                     </td>
+                    <!-- 当模式为finance -->
                     <td *ngIf="model != 'finance'">{{part.CustomerInstallation == 1 ? '是' : '否'}}</td>
                     <td *ngIf="model == 'finance'">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="CustomerInstallation{{i}}" [(ngModel)]="part.CustomerInstallation" [value]="1" checked="checked">
+                                <input type="radio" name="CustomerInstallation{{i}}" [(ngModel)]="part.CustomerInstallation" [value]="1">
                                 是
                             </label>
                             <label>
@@ -61,11 +63,13 @@
                             </label>
                         </div>
                     </td>
-                    <td *ngIf="model != 'parts'">{{part.OrderDeliverdDate}}</td>
+                    <!-- 当模式为parts -->
+                    <td *ngIf="model != 'parts'">{{part.OrderDeliverdDate | date: 'yyyy年MM月dd日'}}</td>
                     <td *ngIf="model == 'parts'">
                         <input type="text" placeholder="{{part.OrderDeliverdDate}}" class="form-control" #dp="bsDatepicker" bsDatepicker name="OrderDeliverdDate{{i}}" [(bsValue)]="part.OrderDeliverdDate">
                     </td>
-                    <td *ngIf="model != 'service'">{{part.Schedule}}</td>
+                    <!-- 当模式为service -->
+                    <td *ngIf="model != 'service'">{{part.Schedule | date: 'yyyy年MM月dd日'}}</td>
                     <td *ngIf="model == 'service'">
                         <input type="text" placeholder="{{part.Schedule}}" class="form-control" #dp="bsDatepicker" bsDatepicker name="Schedule{{i}}" [(bsValue)]="part.Schedule">
                     </td>

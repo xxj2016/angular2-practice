@@ -14,7 +14,7 @@ export class PartsListComponent implements OnInit {
 
     partsList: PartsList[];    // PartsList数据
     status_color = ['red', 'orange', 'yellow', 'green', 'blue'];    // 根据status判断背景颜色
-    model = 'service';    // 模式
+    model = 'default';    // 模式 分别为: default, finance, service, parts
 
     constructor(private _localeService: BsLocaleService) {
         moment.locale('zh-cn');
@@ -27,7 +27,7 @@ export class PartsListComponent implements OnInit {
                 DueBillPartsId: 1,   // 零件id，需要根据status的值来给出背景色
                 DueBillId: 1,		  // 账单id
                 Name: 'Jet',  // 名字
-                Year: '1992',  // 年份
+                Year: '2000',  // 年份
                 Trim: 'Jet',  // 系列
                 Make: 'Jet',  // 厂商
                 Model: 'Jet',  // 型号
@@ -36,15 +36,15 @@ export class PartsListComponent implements OnInit {
                 RequiredInstall: 1,  // 0 or 1，表示是否需要安装
                 IsInStock: 0,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
-                OrderDeliverdDate: '2018年1月12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年1月11日',  // 安装日期，格式 :  年-月-日
+                OrderDeliverdDate: new Date(),  // 到货日期，格式 : 年-月-日
+                Schedule: new Date(),  // 安装日期，格式 :  年-月-日
                 Status: 1,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
                 DueBillPartsId: 2,   // 零件id，需要根据status的值来给出背景色
                 DueBillId: 1,		  // 账单id
                 Name: 'Jet',  // 名字
-                Year: '1992',  // 年份
+                Year: '1998',  // 年份
                 Trim: 'Jet',  // 系列
                 Make: 'Jet',  // 厂商
                 Model: 'Jet',  // 型号
@@ -53,15 +53,15 @@ export class PartsListComponent implements OnInit {
                 RequiredInstall: 1,  // 0 or 1，表示是否需要安装
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
-                OrderDeliverdDate: '2018年1月12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年1月1日',  // 安装日期，格式 :  年-月-日
+                OrderDeliverdDate: new Date(),  // 到货日期，格式 : 年-月-日
+                Schedule: new Date(),  // 安装日期，格式 :  年-月-日
                 Status: 2,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
                 DueBillPartsId: 3,   // 零件id，需要根据status的值来给出背景色
                 DueBillId: 1,		  // 账单id
                 Name: 'Jet',  // 名字
-                Year: '1992',  // 年份
+                Year: '1998',  // 年份
                 Trim: 'Jet',  // 系列
                 Make: 'Jet',  // 厂商
                 Model: 'Jet',  // 型号
@@ -70,15 +70,15 @@ export class PartsListComponent implements OnInit {
                 RequiredInstall: 1,  // 0 or 1，表示是否需要安装
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
-                OrderDeliverdDate: '2018年1月12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年1月2日',  // 安装日期，格式 :  年-月-日
+                OrderDeliverdDate: new Date(),  // 到货日期，格式 : 年-月-日
+                Schedule: new Date(),  // 安装日期，格式 :  年-月-日
                 Status: 3,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
                 DueBillPartsId: 4,   // 零件id，需要根据status的值来给出背景色
                 DueBillId: 1,		  // 账单id
                 Name: 'Jet',  // 名字
-                Year: '1992',  // 年份
+                Year: '2004',  // 年份
                 Trim: 'Jet',  // 系列
                 Make: 'Jet',  // 厂商
                 Model: 'Jet',  // 型号
@@ -87,15 +87,15 @@ export class PartsListComponent implements OnInit {
                 RequiredInstall: 1,  // 0 or 1，表示是否需要安装
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
-                OrderDeliverdDate: '2018年1月12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年1月11日',  // 安装日期，格式 :  年-月-日
+                OrderDeliverdDate: new Date(),  // 到货日期，格式 : 年-月-日
+                Schedule: new Date(),  // 安装日期，格式 :  年-月-日
                 Status: 4,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
                 DueBillPartsId: 5,   // 零件id，需要根据status的值来给出背景色
                 DueBillId: 1,		  // 账单id
                 Name: 'Jet',  // 名字
-                Year: '1992',  // 年份
+                Year: '2008',  // 年份
                 Trim: 'Jet',  // 系列
                 Make: 'Jet',  // 厂商
                 Model: 'Jet',  // 型号
@@ -104,15 +104,15 @@ export class PartsListComponent implements OnInit {
                 RequiredInstall: 1,  // 0 or 1，表示是否需要安装
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
-                OrderDeliverdDate: '2018年1月12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年1月15日',  // 安装日期，格式 :  年-月-日
+                OrderDeliverdDate: new Date(),  // 到货日期，格式 : 年-月-日
+                Schedule: new Date(),  // 安装日期，格式 :  年-月-日
                 Status: 5,  // 状态，取值[1, 5]，用5中不同颜色标定
             }
         ];
     }
+    
     format(option) {
         console.log(option);
-        
     }
 
     savePart() {
