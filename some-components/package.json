@@ -1,5 +1,6 @@
 {
   "name": "some-components",
+  "author": "Jet Xu",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
