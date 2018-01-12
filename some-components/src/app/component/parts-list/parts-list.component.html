@@ -24,8 +24,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let part of partsList">
-                    <td [style.backgroundColor]="status_color[part.Status - 1]">{{part.DueBillPartsId}}</td>
+                <tr *ngFor="let part of partsList; let i = index;" [style.backgroundColor]="status_color[part.Status - 1]">
+                    <td>{{part.DueBillPartsId}}</td>
                     <td>{{part.DueBillId}}</td>
                     <td>{{part.Name}}</td>
                     <td>{{part.Year}}</td>
@@ -36,13 +36,31 @@
                     <td>{{part.Cost}}</td>
                     <td>{{part.RequiredInstall}}</td>
                     <td>{{part.IsInStock}}</td>
-                    <td>{{part.CustomerInstallation}}</td>
+                    <td *ngIf="model != 'finance'">{{part.CustomerInstallation}}</td>
+                    <td *ngIf="model == 'finance'">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="CustomerInstallation{{i}}" value="1" checked="checked">
+                            是
+                        </label>
+                        <label>
+                            <input type="radio" name="CustomerInstallation{{i}}" value="0">
+                            否
+                        </label>
+                    </div>
+                    </td>
                     <td>{{part.OrderDeliverdDate}}</td>
-                    <td>{{part.Schedule}}</td>
+                    <td *ngIf="model != 'service'">{{part.Schedule | date: 'yyyy-MM-dd'}}</td>
+                    <td *ngIf="model == 'service'">
+                        <input type="date" class="form-control" name="Schedule{{i}}" #Schedule{{i}}="ngModel" [(ngModel)]="part.Schedule">
+                    </td>
                     <td>{{part.Status}}</td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="panel-footer text-center" *ngIf="model != 'default'">
+        <button type="button" class="btn btn-success">保存</button>
     </div>
 
 </div>

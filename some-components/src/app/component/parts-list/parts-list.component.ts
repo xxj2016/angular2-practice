@@ -6,9 +6,11 @@ import { PartsList } from '../../models/parts-list';
     styleUrls: ['./parts-list.component.scss']
 })
 export class PartsListComponent implements OnInit {
-    // PartsList数据
-    partsList: PartsList[];
-    status_color = ['red', 'orange', 'yellow', 'green', 'blue'];
+
+    partsList: PartsList[];    // PartsList数据
+    status_color = ['red', 'orange', 'yellow', 'green', 'blue'];    // 根据status判断背景颜色
+    model = 'service';    // 模式
+
     constructor() { }
 
     ngOnInit() {
@@ -27,7 +29,7 @@ export class PartsListComponent implements OnInit {
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
                 OrderDeliverdDate: '2018年-1月-12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年-1月-12日',  // 安装日期，格式 :  年-月-日
+                Schedule: '2018-1-12',  // 安装日期，格式 :  年-月-日
                 Status: 1,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
@@ -44,7 +46,7 @@ export class PartsListComponent implements OnInit {
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
                 OrderDeliverdDate: '2018年-1月-12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年-1月-12日',  // 安装日期，格式 :  年-月-日
+                Schedule: '2018-1-12',  // 安装日期，格式 :  年-月-日
                 Status: 2,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
@@ -61,7 +63,7 @@ export class PartsListComponent implements OnInit {
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
                 OrderDeliverdDate: '2018年-1月-12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年-1月-12日',  // 安装日期，格式 :  年-月-日
+                Schedule: '2018-1-12',  // 安装日期，格式 :  年-月-日
                 Status: 3,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
@@ -78,7 +80,7 @@ export class PartsListComponent implements OnInit {
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
                 OrderDeliverdDate: '2018年-1月-12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年-1月-12日',  // 安装日期，格式 :  年-月-日
+                Schedule: '2018-1-12',  // 安装日期，格式 :  年-月-日
                 Status: 4,  // 状态，取值[1, 5]，用5中不同颜色标定
             },
             {
@@ -95,10 +97,10 @@ export class PartsListComponent implements OnInit {
                 IsInStock: 1,  // 0 or 1，表示是否有库存
                 CustomerInstallation: 1,  // 0 or 1，表示是否客户自己安装
                 OrderDeliverdDate: '2018年-1月-12日',  // 到货日期，格式 : 年-月-日
-                Schedule: '2018年-1月-12日',  // 安装日期，格式 :  年-月-日
+                Schedule: '2018-1-12',  // 安装日期，格式 :  年-月-日
                 Status: 5,  // 状态，取值[1, 5]，用5中不同颜色标定
             }
-        ]
+        ];
     }
 
 }
