@@ -50,9 +50,11 @@
                     </div>
                     </td>
                     <td>{{part.OrderDeliverdDate}}</td>
-                    <td *ngIf="model != 'service'">{{part.Schedule | date: 'yyyy-MM-dd'}}</td>
+                    <td *ngIf="model != 'service'">{{part.Schedule | date: 'yyyy年-MM月-dd日'}}</td>
                     <td *ngIf="model == 'service'">
-                        <input type="date" class="form-control" name="Schedule{{i}}" #Schedule{{i}}="ngModel" [(ngModel)]="part.Schedule">
+                        <!-- {{part.Schedule | date: 'yyyy年-MM月-dd日'}} -->
+                        <!-- <input type="date" class="form-control" name="Schedule{{i}}" #Schedule{{i}}="ngModel" [(ngModel)]="part.Schedule"> -->
+                        <input type="text" [bsConfig]="bsConfig" class="form-control" value="{{part.Schedule}}" (change)="format(part.Schedule)" #dp="bsDatepicker" bsDatepicker name="Schedule{{i}}" [(bsValue)]="part.Schedule">
                     </td>
                     <td>{{part.Status}}</td>
                 </tr>
@@ -60,7 +62,7 @@
         </table>
     </div>
     <div class="panel-footer text-center" *ngIf="model != 'default'">
-        <button type="button" class="btn btn-success">保存</button>
+        <button type="button" class="btn btn-success" (click)="savePart()" >保存</button>
     </div>
 
 </div>
